@@ -63,12 +63,15 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         color: Colors.black.withOpacity(0.7),
                       ),
-                      prefixIcon: Icon(Icons.search_rounded,color: Colors.black.withOpacity(0.7),),
+                      prefixIcon: Icon(
+                        Icons.search_rounded,
+                        color: Colors.black.withOpacity(0.7),
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 7,
                 ),
               ],
             ),
