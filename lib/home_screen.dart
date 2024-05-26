@@ -1,9 +1,34 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  final List<String> catName = [
+    'Category',
+    'Classes',
+    'Free Courses',
+    'BookStore',
+    'Live Courses',
+    'Leaderboard'
+  ];
+
+  final List<Color> catColor = [
+    const Color(0xff32AD32),
+    const Color(0xff6666f5),
+    const Color(0xff26ABAB),
+    const Color(0xff008080),
+    const Color(0xffB161E7),
+    const Color(0xffE76161),
+  ];
+
+  final List<Icon> catIcon = [
+   const Icon(Icons.category,color: Colors.white,size: 30),
+   const Icon(Icons.video_library,color: Colors.white,size: 30),
+   const Icon(Icons.assessment,color: Colors.white,size: 30),
+   const Icon(Icons.store,color: Colors.white,size: 30),
+   const Icon(Icons.play_circle_fill,color: Colors.white,size: 30),
+   const Icon(Icons.emoji_events,color: Colors.white,size: 30),
+ ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 13,
                 ),
                 const Text(
                   'Hi, Programmers',
@@ -46,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 13,
                 ),
                 Container(
                   width: MediaQuery.sizeOf(context).width,
@@ -72,6 +97,44 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 7,
+                ),
+              ],
+            ),
+          ),
+
+
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Column(
+              children: [
+                GridView.builder(
+                  shrinkWrap: true,
+                  itemCount: catName.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                  childAspectRatio: 1.25),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              color: catColor[index],
+                              shape: BoxShape.circle
+                            ),
+                            child: catIcon[index],
+                          ),
+                          const SizedBox(
+                            height: 05,
+                          ),
+                          Text(catName[index],style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.black.withOpacity(0.7)),)
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

@@ -67,7 +67,7 @@ class SplashScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
                       child: InkWell(
-                        onTap: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));},
+                        onTap: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));},
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                               vertical: 10, horizontal: 50),
