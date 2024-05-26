@@ -1,14 +1,20 @@
-import 'package:education_app_ui/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:education_app_ui/splash_screen.dart';
+
+void main() {
+  runApp(const EducationApp());
+}
 
 class EducationApp extends StatelessWidget {
   const EducationApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       theme: ThemeData(
-        backgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+            .copyWith(background: Colors.white),
       ),
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
