@@ -1,3 +1,4 @@
+import 'package:education_app_ui/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:education_app_ui/splash_screen.dart';
 

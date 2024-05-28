@@ -17,9 +17,9 @@ class SplashScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(2),
               ),
-              child: Image.network(
-                'https://shorturl.at/Auirk',
-                scale: 2.5,
+              child: Image.asset(
+                'images/splash_img.jpg',
+                scale: 7,
               ),
             ),
             Align(
@@ -49,7 +49,7 @@ class SplashScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 50),
+                          vertical: 18, horizontal: 50),
                       child: Text(
                         'Learning programming is like unlocking a superpower; it transforms ideas into reality with just a few lines of code.',
                         textAlign: TextAlign.center,

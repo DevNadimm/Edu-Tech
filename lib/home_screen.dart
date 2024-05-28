@@ -1,4 +1,7 @@
+import 'package:education_app_ui/course_overview.dart';
 import 'package:flutter/material.dart';
+
+import 'course_info_class.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -22,13 +25,64 @@ class HomeScreen extends StatelessWidget {
   ];
 
   final List<Icon> catIcon = [
-   const Icon(Icons.category,color: Colors.white,size: 30),
-   const Icon(Icons.video_library,color: Colors.white,size: 30),
-   const Icon(Icons.assessment,color: Colors.white,size: 30),
-   const Icon(Icons.store,color: Colors.white,size: 30),
-   const Icon(Icons.play_circle_fill,color: Colors.white,size: 30),
-   const Icon(Icons.emoji_events,color: Colors.white,size: 30),
- ];
+    const Icon(Icons.category, color: Colors.white, size: 30),
+    const Icon(Icons.video_library, color: Colors.white, size: 30),
+    const Icon(Icons.assessment, color: Colors.white, size: 30),
+    const Icon(Icons.store, color: Colors.white, size: 30),
+    const Icon(Icons.play_circle_fill, color: Colors.white, size: 30),
+    const Icon(Icons.emoji_events, color: Colors.white, size: 30),
+  ];
+
+  List<CourseInfo> courseInfoList = [
+    CourseInfo(
+        courseName: 'Flutter',
+        courseDescription:
+            'Learn to build high-performance, natively compiled applications with Flutter. This course covers Dart programming, Flutter widgets, state management, and deployment. Perfect for all levels, you\'ll create stunning, responsive apps for mobile, web, and desktop platforms.',
+        courseLecturesCount: '46 Lectures',
+        courseCreator: 'Rafat J.M.'),
+    CourseInfo(
+        courseName: 'Python',
+        courseDescription:
+            ' Learn Python programming comprehensively, covering fundamentals, data structures, web development, and machine learning. Ideal for all levels, this course equips you with the skills to build robust, scalable applications and tackle real-world programming challenges.',
+        courseLecturesCount: '39 Lectures',
+        courseCreator: 'FreeCodeCamp'),
+    CourseInfo(
+        courseName: 'C++',
+        courseDescription:
+            'Master C++ programming with this comprehensive course. Covering fundamentals, object-oriented programming, data structures, and advanced topics, you\'ll gain the skills to develop efficient, high-performance applications. Suitable for all levels, this course prepares you for real-world software development.',
+        courseLecturesCount: '33 Lectures',
+        courseCreator: 'Shraddha'),
+    CourseInfo(
+        courseName: 'React Native',
+        courseDescription:
+            'Master React Native to create high-quality, cross-platform mobile apps. This course covers components, state management, navigation, and deployment. Suitable for all skill levels, you\'ll learn to build efficient, responsive apps for both iOS and Android platforms.',
+        courseLecturesCount: '42 Lectures',
+        courseCreator: 'Harry'),
+    CourseInfo(
+        courseName: 'JavaScript',
+        courseDescription:
+            'Master JavaScript programming with this comprehensive course. Covering core concepts, DOM manipulation, ES6+, asynchronous programming, and frameworks, you\'ll gain the skills to build dynamic, interactive web applications. Suitable for all levels, this Course prepares you for real-world development.',
+        courseLecturesCount: '51 Lectures',
+        courseCreator: 'Jhankar Mahbub'),
+    CourseInfo(
+        courseName: 'Kotlin',
+        courseDescription:
+            'Master Kotlin programming and Android development with this comprehensive course. Covering Kotlin basics, Android Studio, design, and advanced app features, you\'ll learn to create efficient, modern Android applications. Perfect for all levels, this course ensures practical, real-world skills.',
+        courseLecturesCount: '39 Lectures',
+        courseCreator: 'Unknown'),
+    CourseInfo(
+        courseName: 'Swift',
+        courseDescription:
+            'Learn Swift and app development from the ground up. This course covers Swift programming, UI design, data management, and app deployment. Ideal for all levels, you\'ll create efficient, feature-rich apps ready for the App Store.',
+        courseLecturesCount: '49 Lectures',
+        courseCreator: 'Unknown'),
+    CourseInfo(
+        courseName: 'C#',
+        courseDescription:
+            'Master C# programming with this in-depth course. Covering the basics, object-oriented programming, LINQ, and .NET framework, you\'ll learn to create efficient, scalable applications. Perfect for all levels, this course equips you with essential C# development skills.',
+        courseLecturesCount: '37 Lectures',
+        courseCreator: 'Unknown')
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -101,8 +155,6 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-
-
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: Column(
@@ -111,8 +163,7 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: catName.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                  childAspectRatio: 1.25),
+                      crossAxisCount: 3, childAspectRatio: 1.25),
                   itemBuilder: (BuildContext context, int index) {
                     return Center(
                       child: Column(
@@ -122,20 +173,120 @@ class HomeScreen extends StatelessWidget {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                              color: catColor[index],
-                              shape: BoxShape.circle
-                            ),
+                                color: catColor[index], shape: BoxShape.circle),
                             child: catIcon[index],
                           ),
                           const SizedBox(
                             height: 05,
                           ),
-                          Text(catName[index],style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.black.withOpacity(0.7)),)
+                          Text(
+                            catName[index],
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black.withOpacity(0.7)),
+                          )
                         ],
                       ),
                     );
                   },
                 ),
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10,),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Courses',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                    color: Colors.black.withOpacity(0.8),
+                  ),
+                ),
+                const Text(
+                  'See all',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    color: Colors.purple,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 13),
+            child: Column(
+              children: [
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 8,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: .8,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Material(
+                      color: const Color(0xFFFBEFFF),
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CourseOverview(
+                                courseName: courseInfoList[index].courseName,
+                                courseDescription: courseInfoList[index].courseDescription,
+                                courseCreator: courseInfoList[index].courseCreator,
+                                courseLecturesCount: courseInfoList[index].courseLecturesCount,
+                              ),
+                            ),
+                          );
+                        },
+                        child: SizedBox(
+                          height: 100,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'images/${courseInfoList[index].courseName}.png',
+                                  scale: 3,
+                                ),
+                                const SizedBox(
+                                  height: 9,
+                                ),
+                                Text(
+                                  courseInfoList[index].courseName,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black.withOpacity(.7),
+                                  ),
+                                ),
+                                Text(
+                                  courseInfoList[index].courseLecturesCount,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black.withOpacity(.6),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                )
               ],
             ),
           )
