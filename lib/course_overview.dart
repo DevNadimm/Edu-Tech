@@ -51,6 +51,9 @@ class _CourseOverviewState extends State<CourseOverview> {
             size: 25,
             color: Colors.white,
           ),
+          SizedBox(
+            width: 12,
+          )
         ],
       ),
       body: SingleChildScrollView(
