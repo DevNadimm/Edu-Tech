@@ -89,7 +89,7 @@ class _CourseOverviewState extends State<CourseOverview> {
                       ),
                     ),
                     const Center(
-                      child: Icon(Icons.play_arrow, size: 42, color: Colors.purple),
+                      child: Icon(Icons.play_arrow, size: 40, color: Colors.purple),
                     ),
                   ],
                 ),
