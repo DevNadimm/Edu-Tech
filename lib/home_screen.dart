@@ -137,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                 const Text(
                   'Hi, Programmers',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 23,
                       color: Colors.white,
                       fontWeight: FontWeight.w600),
                 ),
