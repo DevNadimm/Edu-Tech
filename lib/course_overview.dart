@@ -1,6 +1,5 @@
 import 'package:education_app_ui/videos_selected.dart';
 import 'package:flutter/material.dart';
-
 import 'description_selected.dart';
 
 class CourseOverview extends StatefulWidget {
@@ -11,15 +10,14 @@ class CourseOverview extends StatefulWidget {
   final String courseDuration;
   final String courseRating;
 
-  const CourseOverview({
-    super.key,
-    required this.courseName,
-    required this.courseDescription,
-    required this.courseCreator,
-    required this.courseLecturesCount,
-    required this.courseDuration,
-    required this.courseRating
-  });
+  const CourseOverview(
+      {super.key,
+      required this.courseName,
+      required this.courseDescription,
+      required this.courseCreator,
+      required this.courseLecturesCount,
+      required this.courseDuration,
+      required this.courseRating});
 
   @override
   _CourseOverviewState createState() => _CourseOverviewState();
@@ -32,17 +30,16 @@ class _CourseOverviewState extends State<CourseOverview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.purple,
         foregroundColor: Colors.white,
-        title: Center(
-          child: Text(
-            widget.courseName,
-            style: const TextStyle(
-              fontSize: 23,
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 0.5,
-            ),
+        title: Text(
+          widget.courseName,
+          style: const TextStyle(
+            fontSize: 23,
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.5,
           ),
         ),
         actions: const [
@@ -89,7 +86,8 @@ class _CourseOverviewState extends State<CourseOverview> {
                       ),
                     ),
                     const Center(
-                      child: Icon(Icons.play_arrow, size: 40, color: Colors.purple),
+                      child: Icon(Icons.play_arrow,
+                          size: 40, color: Colors.purple),
                     ),
                   ],
                 ),
@@ -109,10 +107,8 @@ class _CourseOverviewState extends State<CourseOverview> {
               ),
               Text(
                 'Created by ${widget.courseCreator}',
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500
-                ),
+                style:
+                    const TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 2,
@@ -138,7 +134,9 @@ class _CourseOverviewState extends State<CourseOverview> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Material(
-                      color: isVideosSelected ? Colors.purple : Colors.purple.withOpacity(0.8),
+                      color: isVideosSelected
+                          ? Colors.purple
+                          : Colors.purple.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(10),
                       child: InkWell(
                         onTap: () {
@@ -163,7 +161,9 @@ class _CourseOverviewState extends State<CourseOverview> {
                       ),
                     ),
                     Material(
-                      color: isVideosSelected ? Colors.purple.withOpacity(0.8) : Colors.purple,
+                      color: isVideosSelected
+                          ? Colors.purple.withOpacity(0.8)
+                          : Colors.purple,
                       borderRadius: BorderRadius.circular(10),
                       child: InkWell(
                         onTap: () {
