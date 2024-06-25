@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
     const Icon(Icons.emoji_events, color: Colors.white, size: 30),
   ];
 
-  List<CourseInfo> courseInfoList = [
+  final List<CourseInfo> courseInfoList = [
     CourseInfo(
       courseName: 'Flutter',
       courseDescription:
@@ -104,212 +104,233 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 13),
-            decoration: const BoxDecoration(
-                color: Colors.purple,
-                borderRadius: BorderRadius.only(
+      backgroundColor: Colors.purple,
+      body: SafeArea(
+        child: Container(
+          decoration: const BoxDecoration(color: Colors.white),
+          child: ListView(
+            children: [
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 13),
+                decoration: const BoxDecoration(
+                  color: Colors.purple,
+                  borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(20),
-                    bottomLeft: Radius.circular(20))),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    bottomLeft: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.dashboard,
-                      color: Colors.white,
-                      size: 28,
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(
+                          Icons.dashboard,
+                          color: Colors.white,
+                          size: 28,
+                        ),
+                        Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                          size: 28,
+                        ),
+                      ],
                     ),
-                    Icon(
-                      Icons.notifications,
-                      color: Colors.white,
-                      size: 28,
+                    const SizedBox(
+                      height: 13,
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 13,
-                ),
-                const Text(
-                  'Hi, Programmers',
-                  style: TextStyle(
-                      fontSize: 23,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600),
-                ),
-                const SizedBox(
-                  height: 13,
-                ),
-                Container(
-                  width: MediaQuery.sizeOf(context).width,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Search here...',
-                      hintStyle: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black.withOpacity(0.7),
-                      ),
-                      prefixIcon: Icon(
-                        Icons.search_rounded,
-                        color: Colors.black.withOpacity(0.7),
-                      ),
+                    const Text(
+                      'Hi, Programmers',
+                      style: TextStyle(
+                          fontSize: 23,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600),
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 7,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: Column(
-              children: [
-                GridView.builder(
-                  shrinkWrap: true,
-                  itemCount: catName.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, childAspectRatio: 1.25),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                                color: catColor[index], shape: BoxShape.circle),
-                            child: catIcon[index],
+                    const SizedBox(
+                      height: 13,
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Search here...',
+                          hintStyle: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black.withOpacity(0.7),
                           ),
-                          const SizedBox(
-                            height: 05,
-                          ),
-                          Text(
-                            catName[index],
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black.withOpacity(0.7)),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10,),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Courses',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
-                    color: Colors.black.withOpacity(0.8),
-                  ),
-                ),
-                const Text(
-                  'See all',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                    color: Colors.purple,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 13),
-            child: Column(
-              children: [
-                GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 8,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: .8,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Material(
-                      color: const Color(0xFFFBEFFF),
-                      borderRadius: BorderRadius.circular(10),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CourseOverview(
-                                courseName: courseInfoList[index].courseName,
-                                courseDescription: courseInfoList[index].courseDescription,
-                                courseCreator: courseInfoList[index].courseCreator,
-                                courseLecturesCount: courseInfoList[index].courseLecturesCount,
-                                courseDuration: courseInfoList[index].courseDuration,
-                                courseRating: courseInfoList[index].courseRating,
-                              ),
-                            ),
-                          );
-                        },
-                        child: SizedBox(
-                          height: 100,
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  'images/${courseInfoList[index].courseName}.png',
-                                  scale: 3,
-                                ),
-                                const SizedBox(
-                                  height: 9,
-                                ),
-                                Text(
-                                  courseInfoList[index].courseName,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black.withOpacity(.7),
-                                  ),
-                                ),
-                                Text(
-                                  courseInfoList[index].courseLecturesCount,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black.withOpacity(.6),
-                                  ),
-                                )
-                              ],
-                            ),
+                          prefixIcon: Icon(
+                            Icons.search_rounded,
+                            color: Colors.black.withOpacity(0.7),
                           ),
                         ),
                       ),
-                    );
-                  },
-                )
-              ],
-            ),
-          )
-        ],
+                    ),
+                    const SizedBox(
+                      height: 7,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Column(
+                  children: [
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: catName.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3, childAspectRatio: 1.25),
+                      itemBuilder: (BuildContext context, int index) {
+                        return Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 60,
+                                decoration: BoxDecoration(
+                                    color: catColor[index],
+                                    shape: BoxShape.circle),
+                                child: catIcon[index],
+                              ),
+                              const SizedBox(
+                                height: 05,
+                              ),
+                              Text(
+                                catName[index],
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black.withOpacity(0.7)),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Courses',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                        color: Colors.black.withOpacity(0.8),
+                      ),
+                    ),
+                    const Text(
+                      'See all',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                        color: Colors.purple,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 13),
+                child: Column(
+                  children: [
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 8,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: .8,
+                              mainAxisSpacing: 10,
+                              crossAxisSpacing: 10),
+                      itemBuilder: (BuildContext context, int index) {
+                        return Material(
+                          color: const Color(0xFFFBEFFF),
+                          borderRadius: BorderRadius.circular(10),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CourseOverview(
+                                    courseName:
+                                        courseInfoList[index].courseName,
+                                    courseDescription:
+                                        courseInfoList[index].courseDescription,
+                                    courseCreator:
+                                        courseInfoList[index].courseCreator,
+                                    courseLecturesCount: courseInfoList[index]
+                                        .courseLecturesCount,
+                                    courseDuration:
+                                        courseInfoList[index].courseDuration,
+                                    courseRating:
+                                        courseInfoList[index].courseRating,
+                                  ),
+                                ),
+                              );
+                            },
+                            child: SizedBox(
+                              height: 100,
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'images/${courseInfoList[index].courseName}.png',
+                                      scale: 3,
+                                    ),
+                                    const SizedBox(
+                                      height: 9,
+                                    ),
+                                    Text(
+                                      courseInfoList[index].courseName,
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.black.withOpacity(.7),
+                                      ),
+                                    ),
+                                    Text(
+                                      courseInfoList[index].courseLecturesCount,
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.black.withOpacity(.6),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
