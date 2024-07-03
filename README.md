@@ -1,16 +1,45 @@
-# education_app_ui
+# Edu-Tech App UI
 
-A new Flutter project.
+Edu-Tech is a sleek and modern educational technology app designed to provide an intuitive and engaging user interface. Built using Flutter, this app showcases the potential for creating a rich user experience with seamless performance across multiple platforms.
+
+![App Screenshot](images/screenshot.jpg)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+Ensure you have the following installed:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Flutter](https://flutter.dev/docs/get-started/install)
+- [Dart](https://dart.dev/get-dart)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/DevNadimm/Edu-Tech.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd Edu-Tech
+    ```
+3. Install the dependencies:
+    ```bash
+    flutter pub get
+    ```
+4. Run the app:
+    ```bash
+    flutter run
+    ```
+
+## Usage
+
+Once the app is running, you can explore the different sections of the Edu-Tech app, including the home page, course listings, and course view.
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out at [nadimchowdhury87@gmail.com].
+
+---
+
+Happy Coding!
