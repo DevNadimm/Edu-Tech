@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VideosSelected extends StatelessWidget {
-  List videoList = [
+  final List videoList = [
     'Video 1',
     'Video 2',
     'Video 3',
@@ -32,6 +32,7 @@ class VideosSelected extends StatelessWidget {
           ),
           leading: const CircleAvatar(
               backgroundColor: Colors.purple,
+              foregroundColor: Colors.white,
               child: Icon(Icons.play_arrow_rounded),
           ),
         );

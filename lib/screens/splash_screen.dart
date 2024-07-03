@@ -1,4 +1,4 @@
-import 'package:education_app_ui/home_screen.dart';
+import 'package:education_app_ui/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {

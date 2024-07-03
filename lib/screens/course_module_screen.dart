@@ -1,8 +1,8 @@
-import 'package:education_app_ui/videos_selected.dart';
+import 'package:education_app_ui/widgets/videos_selected.dart';
 import 'package:flutter/material.dart';
-import 'description_selected.dart';
+import '../widgets/description_selected.dart';
 
-class CourseOverview extends StatefulWidget {
+class CourseModuleScreen extends StatefulWidget {
   final String courseName;
   final String courseDescription;
   final String courseCreator;
@@ -10,7 +10,7 @@ class CourseOverview extends StatefulWidget {
   final String courseDuration;
   final String courseRating;
 
-  const CourseOverview(
+  const CourseModuleScreen(
       {super.key,
       required this.courseName,
       required this.courseDescription,
@@ -23,7 +23,7 @@ class CourseOverview extends StatefulWidget {
   _CourseOverviewState createState() => _CourseOverviewState();
 }
 
-class _CourseOverviewState extends State<CourseOverview> {
+class _CourseOverviewState extends State<CourseModuleScreen> {
   bool isVideosSelected = true;
 
   @override
