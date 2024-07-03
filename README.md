@@ -38,7 +38,7 @@ Once the app is running, you can explore the different sections of the Edu-Tech 
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out at [nadimchowdhury87@gmail.com].
+If you have any questions or suggestions, feel free to reach out at nadimchowdhury87@gmail.com.
 
 ---
 
